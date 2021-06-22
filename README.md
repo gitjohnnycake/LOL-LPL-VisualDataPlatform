@@ -1,24 +1,16 @@
-# front
+# 英雄联盟LPL数据可视化平台
+对英雄联盟LPL2021夏季赛的数据进行可视化处理
+会持续更新以后的赛季
 
-## Project setup
-```
-npm install
-```
+> 预览 https://work.littlefish.life
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 技术栈
+![](https://img.shields.io/badge/Vue.js-blueviolet?style=for-the-badge&logo=Vue.js)
+![](https://img.shields.io/badge/echarts-ed1941?style=for-the-badge&logo=Apache%20ECharts)
+![](https://img.shields.io/badge/express-afb4db?style=for-the-badge&logo=express)
+![](https://img.shields.io/badge/Node.js-afb4db?style=for-the-badge&logo=node.js)
+![](https://img.shields.io/badge/mysql-fffef9?style=for-the-badge&logo=mysql)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 文件描述
+1. front 文件为 Vue 目录文件
+2. backen 文件为 Node 目录文件
