@@ -7,6 +7,8 @@ const url = {
     "https://lpl.qq.com/web201612/data/LOL_MATCH2_MATCH_PERSONALRANK_LIST_148_7_8.js",
   LPLHero:
     "https://lpl.qq.com/web201612/data/LOL_MATCH2_MATCH_HERORANK_LIST_148_7_8.js",
+  heroList:
+    "https://game.gtimg.cn/images/lol/act/img/js/heroList/hero_list.js",
 };
 
 const basic = (sql, sqlArr, res) => {
@@ -105,25 +107,34 @@ getLPLHeroData = (req, res) => {
 };
 
 // 英雄
-getRequestData = (req, res) => {
-  // 获取英雄信息
-  // request(
-  //   {
-  //     url: "https://game.gtimg.cn/images/lol/act/img/js/heroList/hero_list.js",
-  //   },
-  //   (err, response, body) => {
-  //     if (err) return res.json(err);
-  //     JSON.parse(body).hero.map((item) => {
-  //       inserHeroData(item);
-  //     });
-  //     //getHeroData(res);
-  //   }
-  // );
+getHeroList = (req, res) => {
+  request(
+    {
+      url: url.heroList,
+    },
+    (err, response, body) => {
+      if (err) return res.json(err);
+      JSON.parse(body).hero.map((item) => {
+        inserHeroList(item);
+      });
+    }
+  );
+};
+
+// 英雄
+inserHeroList = async (item) => {
+  let sql = `insert into hero(heroId,name,title)
+    values(?,?,?) on duplicate key update heroId=values(heroId),name=values(name),title=values(title)`;
+  let sqlArr = [
+    Number(item.heroId),
+    item.name,
+    item.title,
+  ];
+  let res = await dbconfig.sySqlConnect(sql, sqlArr);
 };
 
 // 更新数据 （队伍）
 insertTeamData = async (item, lastUpTime) => {
-  console.log(item.sTeamName);
   let sql = `insert into team(teamId,teamName,appearancesFrequency,win,lose,tkill,death,
     averagingWin,averagingKill,averagingDeath,averagingWardPlaced,averagingWardKilled,averagingGold,
     averagingSmallDragon,averagingBigDragon,lastUpTime)
@@ -285,6 +296,7 @@ module.exports = {
   getTeamData,
   getMemberData,
   getLPLHeroData,
+  getHeroList,
   getLength,
   getRandMember,
   getMvpMember,
