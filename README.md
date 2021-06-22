@@ -37,5 +37,5 @@
 7. 浏览器分别输入 http://localhost:3000/team 、http://localhost:3000/member 、http://localhost:3000/hero 、http://localhost:3000/herolist 读取数据至数据库
 8. 终端进入 front 文件执行 npm run serve 启动 Vue 项目
 9. 浏览器输入 http://localhost:8088 访问项目即可
-
+ 
 ## 谢谢🙏
