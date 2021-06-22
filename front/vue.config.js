@@ -33,8 +33,8 @@ module.exports = {
   },
 
   devServer: {
-    host: "https://api.littlefish.life/api",
-    port: 80,
+    host: "localhost",
+    port: 8088,
     https: false,
     open: false,
     overlay: {
@@ -43,7 +43,7 @@ module.exports = {
     },
     proxy: {
       "/api": {
-        target: "https://api.littlefish.life/api",
+        target: "http://localhost/3000",
         ws: true,
         changeOrigin: true,
         pathRewrite: {
