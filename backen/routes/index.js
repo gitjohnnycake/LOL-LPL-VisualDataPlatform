@@ -6,6 +6,7 @@ const lplData = require('../controller/lpl')
 router.get('/team', lplData.getTeamData);
 router.get('/member', lplData.getMemberData);
 router.get('/hero', lplData.getLPLHeroData);
+router.get('/herolist', lplData.getHeroList);
 router.get('/getLength', lplData.getLength);
 router.get('/getRandMember', lplData.getRandMember);
 router.get('/getMvpMember', lplData.getMvpMember);
