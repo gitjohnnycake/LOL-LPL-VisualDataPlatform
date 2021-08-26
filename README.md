@@ -6,7 +6,7 @@
 > 预览 https://work.littlefish.life
 
 ## 技术栈
-![](https://img.shields.io/badge/Node.js-v14.16.0-afdfe4) 
+![](https://img.shields.io/badge/Node.js-v14.16.0-afdfe4)
 ![](https://img.shields.io/badge/@vue/cli-v4.5.12-blueviolet)
 ![](https://img.shields.io/badge/Apache%20ECharts-v5.1.2-ed1941)
 ![](https://img.shields.io/badge/Express-v4.16.1-293047)
